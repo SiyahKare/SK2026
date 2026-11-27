@@ -334,35 +334,6 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-48 border-y border-black/5 dark:border-white/5 relative overflow-hidden transition-colors bg-white dark:bg-[#050505]">
-        <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/5 blur-[160px] pointer-events-none" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-20 text-center">
-            {[
-              { label: 'Total Volume', value: '$1.4B+', icon: Activity },
-              { label: 'Nodes Worldwide', value: '42k+', icon: Globe },
-              { label: 'Uptime', value: '99.99%', icon: Shield },
-              { label: 'Response Time', value: '<20ms', icon: Cpu }
-            ].map((stat, i) => (
-              <motion.div 
-                key={i} 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
-                className="space-y-6 relative group"
-              >
-                <div className="mx-auto w-16 h-16 mb-10 text-cyan-500/20 group-hover:text-cyan-500 transition-all duration-700 transform group-hover:scale-110 group-hover:rotate-6">
-                  <stat.icon className="w-full h-full" />
-                </div>
-                <div className="text-6xl md:text-7xl font-black tracking-tighter text-[#050505] dark:text-white leading-none">{stat.value}</div>
-                <div className="text-[11px] uppercase tracking-[0.4em] text-zinc-500 dark:text-zinc-500 font-black">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Global CTA */}
       <section className="py-48 bg-[#050505] text-white relative overflow-hidden">
          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_130%,#00f3ff25,transparent_60%)]" />

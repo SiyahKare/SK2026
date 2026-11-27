@@ -327,7 +327,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ slug }) => {
                 </div>
                 <div className="flex items-center gap-2 px-3 py-1 bg-cyan-500/10 rounded-full">
                   <RefreshCw className="w-3 h-3 text-cyan-500 animate-spin" />
-                  <span className="text-[10px] font-mono font-bold text-cyan-500 uppercase tracking-widest">Live</span>
+                  <span className="text-[10px] font-mono font-bold text-cyan-500 uppercase tracking-widest">{t({ en: 'Simulated', tr: 'Simülasyon', ru: 'Симуляция' })}</span>
                 </div>
               </div>
               <div className="h-[240px] w-full mb-8 relative">

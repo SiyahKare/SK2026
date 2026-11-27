@@ -38,7 +38,6 @@ const About: React.FC = () => {
     { year: '1999', event: { en: 'Genesis: The first phantom node is established.', tr: 'Başlangıç: İlk hayalet düğüm kuruldu.', ru: 'Генезис: Создан первый фантомный узел.' } },
     { year: '2009', event: { en: 'Web3 Integration: Adoption of early blockchain protocols.', tr: 'Web3 Entegrasyonu: İlk blok zinciri protokollerinin benimsenmesi.', ru: 'Интеграция Web3: Принятие ранних блокчейн-протоколов.' } },
     { year: '2018', event: { en: 'Nexus Protocol: Launch of the institutional automation layer.', tr: 'Nexus Protokolü: Kurumsal otomasyon katmanının lansmanı.', ru: 'Протокол Nexus: Запуск уровня институциональной автоматизации.' } },
-    { year: '2025', event: { en: 'Global Sovereignty: Reaching 40k+ decentralized nodes.', tr: 'Küresel Egemenlik: 40 binden fazla merkeziyetsiz düğüme ulaşılması.', ru: 'Глобальный суверенитет: Достижение 40к+ децентрализованных узлов.' } },
   ];
 
   const howItWorksSteps = [

@@ -7,10 +7,16 @@ const Contact: React.FC = () => {
   const { t } = useLanguage();
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // There is no backend: the form opens the visitor's mail app with the message filled in,
+  // so a request never silently disappears.
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const data = new FormData(e.currentTarget);
+    const subject = `[siyahkare.com] ${data.get('subject') || ''}`;
+    const body = `${data.get('message') || ''}\n\n${data.get('name') || ''}\n${data.get('email') || ''}`;
+    window.location.href = `mailto:core@siyahkare.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 5000);
+    setTimeout(() => setSubmitted(false), 8000);
   };
 
   return (
@@ -62,24 +68,24 @@ const Contact: React.FC = () => {
             {submitted ? (
               <div className="h-full min-h-[400px] flex flex-col items-center justify-center p-12 rounded-3xl bg-white/5 border border-cyan-500/30 text-center animate-in zoom-in duration-300">
                 <CheckCircle2 className="w-20 h-20 text-cyan-400 mb-6" />
-                <h2 className="text-2xl font-bold mb-4">{t({ en: 'Message Received', tr: 'Mesaj Alındı', ru: 'Сообщение получено' })}</h2>
-                <p className="text-zinc-500">{t({ en: 'Our nodes are processing your request. We will reach out shortly.', tr: 'Node\'larımız talebinizi işliyor. Kısa süre içinde iletişime geçeceğiz.', ru: 'Наши узлы обрабатывают ваш запрос. Мы скоро свяжемся.' })}</p>
+                <h2 className="text-2xl font-bold mb-4">{t({ en: 'Your mail app is opening', tr: 'E-posta uygulamanız açılıyor', ru: 'Открывается почтовое приложение' })}</h2>
+                <p className="text-zinc-500">{t({ en: 'Send the prepared email to reach us. If nothing opened, write to core@siyahkare.com.', tr: 'Hazırlanan e-postayı gönderin. Bir şey açılmadıysa core@siyahkare.com adresine yazın.', ru: 'Отправьте подготовленное письмо. Если ничего не открылось, напишите на core@siyahkare.com.' })}</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="p-8 md:p-12 rounded-3xl bg-white/5 border border-white/10 space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="text-sm font-bold text-zinc-400 ml-1">Full Name</label>
-                    <input required type="text" className="w-full px-4 py-4 rounded-xl bg-white/5 border border-white/10 focus:border-cyan-500 transition-all outline-none" placeholder="John Doe" />
+                    <input required name="name" type="text" className="w-full px-4 py-4 rounded-xl bg-white/5 border border-white/10 focus:border-cyan-500 transition-all outline-none" placeholder="John Doe" />
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-bold text-zinc-400 ml-1">Work Email</label>
-                    <input required type="email" className="w-full px-4 py-4 rounded-xl bg-white/5 border border-white/10 focus:border-cyan-500 transition-all outline-none" placeholder="john@company.com" />
+                    <input required name="email" type="email" className="w-full px-4 py-4 rounded-xl bg-white/5 border border-white/10 focus:border-cyan-500 transition-all outline-none" placeholder="john@company.com" />
                   </div>
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-bold text-zinc-400 ml-1">Subject</label>
-                  <select className="w-full px-4 py-4 rounded-xl bg-[#0a0a0a] border border-white/10 focus:border-cyan-500 transition-all outline-none">
+                  <select name="subject" className="w-full px-4 py-4 rounded-xl bg-[#0a0a0a] border border-white/10 focus:border-cyan-500 transition-all outline-none">
                     <option>Product Inquiry</option>
                     <option>Strategic Partnership</option>
                     <option>Investment Opportunity</option>
@@ -88,7 +94,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-bold text-zinc-400 ml-1">Message</label>
-                  <textarea required rows={4} className="w-full px-4 py-4 rounded-xl bg-white/5 border border-white/10 focus:border-cyan-500 transition-all outline-none resize-none" placeholder="Tell us how we can help..." />
+                  <textarea required name="message" rows={4} className="w-full px-4 py-4 rounded-xl bg-white/5 border border-white/10 focus:border-cyan-500 transition-all outline-none resize-none" placeholder="Tell us how we can help..." />
                 </div>
                 <button type="submit" className="w-full py-5 bg-white text-black font-black rounded-xl hover:bg-cyan-400 transition-all flex items-center justify-center gap-2">
                   {t({ en: 'Transmit Message', tr: 'Mesajı Gönder', ru: 'Отправить сообщение' })}

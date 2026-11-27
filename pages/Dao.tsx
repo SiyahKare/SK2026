@@ -54,7 +54,7 @@ const Dao: React.FC = () => {
               </div>
               <div>
                 <h3 className="text-xl font-bold mb-2">{t({ en: 'Global Collective', tr: 'Küresel Kolektif', ru: 'Глобальный коллектив' })}</h3>
-                <p className="text-zinc-500">{t({ en: 'Our community spans over 120 countries, bringing diverse technical and strategic expertise.', tr: 'Topluluğumuz 120\'den fazla ülkeyi kapsıyor ve çeşitli teknik ve stratejik uzmanlıklar getiriyor.', ru: 'Наше сообщество охватывает более 120 стран, объединяя разнообразный технический и стратегический опыт.' })}</p>
+                <p className="text-zinc-500">{t({ en: 'Our community brings together diverse technical and strategic expertise.', tr: 'Topluluğumuz farklı teknik ve stratejik uzmanlıkları bir araya getiriyor.', ru: 'Наше сообщество объединяет разнообразный технический и стратегический опыт.' })}</p>
               </div>
             </div>
           </motion.div>

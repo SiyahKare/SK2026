@@ -41,7 +41,7 @@ export const PRODUCTS: Product[] = [
     specs: [
       { label: { en: 'Avg Latency', tr: 'Ort. Gecikme', ru: 'Сред. задержка' }, value: '24ms' },
       { label: { en: 'Max Throughput', tr: 'Maks. İşlem', ru: 'Макс. пропускная способность' }, value: '5k TPS' },
-      { label: { en: 'Audit Status', tr: 'Denetim Durumu', ru: 'Статус аудита' }, value: 'Certified' },
+      { label: { en: 'Audit Status', tr: 'Denetim Durumu', ru: 'Статус аудита' }, value: 'Planned' },
       { label: { en: 'Language', tr: 'Dil', ru: 'Язык' }, value: 'Rust / C++' }
     ]
   },
@@ -68,8 +68,7 @@ export const PRODUCTS: Product[] = [
     specs: [
       { label: { en: 'Data Refresh', tr: 'Veri Yenileme', ru: 'Обновление данных' }, value: 'Real-time' },
       { label: { en: 'Monitored Assets', tr: 'İzlenen Varlıklar', ru: 'Активы под мониторингом' }, value: '10k+' },
-      { label: { en: 'AI Model', tr: 'AI Modeli', ru: 'Модель ИИ' }, value: 'BERT-Nexus' },
-      { label: { en: 'Accuracy', tr: 'Doğruluk', ru: 'Точность' }, value: '94.2%' }
+      { label: { en: 'AI Model', tr: 'AI Modeli', ru: 'Модель ИИ' }, value: 'BERT-Nexus' }
     ]
   },
   {

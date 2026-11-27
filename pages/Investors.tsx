@@ -21,9 +21,9 @@ const Investors: React.FC = () => {
       icon: Globe,
       title: { en: 'Global Reach', tr: 'Küresel Erişim', ru: 'Глобальный охват' },
       desc: { 
-        en: 'Leverage our decentralized infrastructure of 42k+ nodes spanning over 120 countries for your deployment.',
-        tr: 'Dağıtımlarınız için 120\'den fazla ülkeye yayılan 42 binden fazla düğümden oluşan merkeziyetsiz altyapımızdan yararlanın.',
-        ru: 'Используйте нашу децентрализованную инфраструктуру из 42к+ узлов, охватывающую более 120 стран, для вашего развертывания.'
+        en: 'Build on our automation and blockchain infrastructure for your own deployments.',
+        tr: 'Kendi dağıtımlarınız için otomasyon ve blok zinciri altyapımızı kullanın.',
+        ru: 'Используйте нашу инфраструктуру автоматизации и блокчейна для собственных развертываний.'
       }
     },
     {
